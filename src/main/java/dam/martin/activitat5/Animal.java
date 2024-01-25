@@ -22,7 +22,17 @@ public class Animal extends Thread {
 
         while ( distanciaRecorrer > 0 ){
             try {
-                Thread.sleep( 100 );
+                /*
+                // Descomentando esto sería otra forma de que la carrera la gane el más rápido, he utilizado una lógica
+                   que dependiendo el tipo de animal descansará más o no.
+                if ( this.nombre.startsWith( "tortuga" ) ){
+                    Thread.sleep( 100 );
+                } else if ( this.nombre.startsWith( "conejo" ) ) {
+                    Thread.sleep( 50 );
+                }
+                 */
+
+                Thread.sleep( 10 );
                 distanciaRecorrer -= this.velocidad;
 
                 if ( distanciaRecorrer > 0 ){
