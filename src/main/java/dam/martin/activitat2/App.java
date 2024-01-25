@@ -16,11 +16,25 @@ public class App {
         }
 
         for (int i = 1; i <= n; i += 2) {
+            EntrenadorThread trainerThread = new EntrenadorThread(i + 1);
             PokemonThread pokemonThread = new PokemonThread(i);
+
+
+            trainerThread.start();
+
+            try {
+                trainerThread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
             pokemonThread.start();
 
-            // Luego, crear y ejecutar el entrenador correspondiente
-            new EntrenadorThread(i + 1, pokemonThread).start();
+            try {
+                pokemonThread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
 
     }
