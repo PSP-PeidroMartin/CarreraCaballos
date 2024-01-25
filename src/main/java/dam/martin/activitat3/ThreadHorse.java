@@ -14,7 +14,11 @@ public class ThreadHorse implements Runnable{
 
         while (distanciaTotal > 0){
             try {
-                Thread.sleep(200);
+                if(this.nombreCaballo.equals( "Caballo01" )){
+                    Thread.sleep(210);
+                } else if ( this.nombreCaballo.equals( "Caballo10" ) ) {
+                    Thread.sleep(195);
+                } else Thread.sleep(200);
                 distanciaTotal -= paso;
 
                 if (distanciaTotal > 0) {
@@ -25,6 +29,6 @@ public class ThreadHorse implements Runnable{
             }
         }
 
-        System.out.println( nombreCaballo + ": Ha finalizado la carrera");
+        System.err.println( nombreCaballo + ": Ha finalizado la carrera");
     }
 }

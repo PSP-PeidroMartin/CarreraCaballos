@@ -29,10 +29,10 @@ public class Animal extends Thread {
                     Thread.sleep( 100 );
                 } else if ( this.nombre.startsWith( "conejo" ) ) {
                     Thread.sleep( 50 );
-                }
+                } eles Thread.sleep( 10 );
                  */
 
-                Thread.sleep( 10 );
+                Thread.sleep( 100 );
                 distanciaRecorrer -= this.velocidad;
 
                 if ( distanciaRecorrer > 0 ){
