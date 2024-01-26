@@ -23,7 +23,9 @@ public class App {
         }
         JudgeThread judgeThread = new JudgeThread();
         Thread judge = new Thread(judgeThread);
+        judgeThread.sleepJudge( 1500 );
         judge.start();
+
             while ( descalificados <= TOTAL_DESCALIFICADOS ){
                 if ( !caballos.get( r.nextInt( caballos.size() ) ).isInterrupted() ){
                 judgeThread.descalificarCaballo( caballos.get( r.nextInt( caballos.size() ) ) );
