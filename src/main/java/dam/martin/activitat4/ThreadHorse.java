@@ -1,6 +1,8 @@
 package dam.martin.activitat4;
 
 public class ThreadHorse implements Runnable{
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_GREEN = "\u001B[32m";
     String nombreCaballo;
 
     public ThreadHorse(String nombreCaballo) {
@@ -21,10 +23,12 @@ public class ThreadHorse implements Runnable{
                     System.out.println(nombreCaballo + ": " + distanciaTotal + "metros para finalizar");
                 }
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                System.err.println(this.nombreCaballo + ": descalificado");
+                return;
             }
         }
 
-        System.out.println( nombreCaballo + ": Ha finalizado la carrera");
+
+        System.out.println(ANSI_GREEN + this.nombreCaballo + ": Ha finalizado la carrera" + ANSI_RESET);
     }
 }
